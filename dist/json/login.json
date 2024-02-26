@@ -1,0 +1,52 @@
+{
+  "name": "login-template",
+  "items": [
+    {
+      "id": "email1",
+      "name": "email",
+      "element": "input:text",
+      "type": "string",
+      "text": "Escribe tu email",
+      "validations": {
+        "fns": ["letters", "numbers"],
+        "errorClass": "error-element",
+        "successClass": "success-element"
+      }
+    },
+    {
+      "id": "password1",
+      "name": "password",
+      "element": "input:password",
+      "type": "string",
+      "text": "Escribe tu contraseña",
+      "validations": {
+        "fns": ["letters", "numbers"],
+        "errorClass": "error-element",
+        "successClass": "success-element"
+      }
+    },
+    {
+      "id": "Submit",
+      "name": "Submit",
+      "element": "button",
+      "class": "btn-primary",
+      "text": "Registrar",
+      "events": {
+        "click": {
+          "eventName": "login-event",
+          "values": ["email1", "password1"]
+        }
+      }
+    }
+  ],
+  "functions": [
+    {
+      "name": "letters",
+      "fn": "(value)=>/([a-zA-Z])/.test(value)"
+    },
+    {
+      "name": "numbers",
+      "fn": "(value)=>/[0-9]/.test(value)"
+    }
+  ]
+}
